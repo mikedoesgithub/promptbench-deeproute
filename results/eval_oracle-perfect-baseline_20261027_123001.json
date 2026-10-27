@@ -1,0 +1,910 @@
+{
+  "model_name": "oracle-perfect-baseline",
+  "timestamp": "2026-10-27 12:30:00",
+  "total_runtime_seconds": 0.94,
+  "overall_laps_score": 86.31,
+  "atomic_results": {
+    "total_samples": 400,
+    "top1_accuracy": 1.0,
+    "top3_accuracy": 1.0,
+    "macro_f1": 1.0,
+    "micro_f1": 1.0,
+    "ece": 0.02,
+    "domain_accuracy": 1.0,
+    "laps_score": 86.46,
+    "confusion_pairs": [],
+    "latency": {
+      "p50_ms": 48.03,
+      "p90_ms": 68.69,
+      "p95_ms": 71.7,
+      "p99_ms": 74.18,
+      "mean_ms": 47.67,
+      "std_ms": 15.36,
+      "min_ms": 20.24,
+      "max_ms": 74.98,
+      "throughput_rps": 3212.39,
+      "concurrency": 10
+    },
+    "per_category_metrics": {
+      "admin_clarification_solicitation": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3.0
+      },
+      "admin_file_management": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3.0
+      },
+      "admin_formatting_conversion": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "admin_general_chitchat": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "admin_help_capabilities": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3.0
+      },
+      "admin_meta_prompt_optimization": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "admin_scheduling_reminder": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "admin_session_state_context": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3.0
+      },
+      "admin_workflow_orchestration": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3.0
+      },
+      "browser_accessibility_tree": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3.0
+      },
+      "browser_canvas_inspection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3.0
+      },
+      "browser_dom_interaction": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3.0
+      },
+      "browser_form_submission": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3.0
+      },
+      "browser_network_interception": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3.0
+      },
+      "browser_screenshot_capture": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3.0
+      },
+      "browser_session_cookies": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3.0
+      },
+      "browser_tab_management": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3.0
+      },
+      "browser_web_scraping": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3.0
+      },
+      "data_dataframe_transformation": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "data_etl_pipeline_design": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "data_lakehouse_storage": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "data_quality_validation": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "data_schema_migration": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "data_sql_query_authoring": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "data_statistical_profiling": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "data_vector_index_tuning": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "data_visualization_spec": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "finance_budgeting_forecasting": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "finance_crypto_tokenomics": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "finance_equity_cap_table": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "finance_ledger_accounting": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "finance_memo_purchase_proposal": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "finance_portfolio_risk_modeling": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "finance_rate_calculations": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "finance_tax_deduction_strategy": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "finance_unit_economics": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "hardware_bom_optimization": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "hardware_firmware_development": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "hardware_mfg_dfm_validation": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "hardware_pcb_layout_routing": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "hardware_protocol_reverse_eng": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "hardware_rf_wireless_design": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "hardware_schematic_analysis": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "hardware_signal_integrity_power": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "hardware_thermal_management": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "math_algebra_calculus": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "math_combinatorics_discrete": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "math_formal_proof": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "math_information_theory": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "math_linear_algebra": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "math_logic_puzzles": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "math_numerical_computation": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "math_optimization_theory": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "math_probability_statistics": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "mcp_brave_search_server": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3.0
+      },
+      "mcp_fetch_http_server": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3.0
+      },
+      "mcp_filesystem_server": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3.0
+      },
+      "mcp_github_server": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3.0
+      },
+      "mcp_memory_knowledge_graph": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3.0
+      },
+      "mcp_postgres_server": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3.0
+      },
+      "mcp_slack_server": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3.0
+      },
+      "mcp_terminal_server": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3.0
+      },
+      "mcp_tool_negotiation_discovery": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3.0
+      },
+      "prose_copywriting_marketing": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "prose_creative_ideation": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "prose_editing_proofreading": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "prose_email_correspondence": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "prose_longform_essay": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "prose_storytelling_narrative": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "prose_summarization_executive": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "prose_technical_writing": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "prose_tone_transfer": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "research_citation_verification": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "research_competitive_intelligence": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "research_data_extraction": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "research_deep_survey": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "research_factual_search": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "research_literature_synthesis": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "research_patent_analysis": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "research_regulatory_compliance": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "research_source_credibility": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "swe_api_integration": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "swe_code_generation": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "swe_code_refactoring": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "swe_debugging_bug_hunting": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "swe_dependency_management": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "swe_devops_ci_cd": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "swe_performance_profiling": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "swe_system_architecture": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "swe_test_writing": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "sys_backup_disaster_recovery": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "sys_config_audit_hardening": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "sys_container_orchestration": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "sys_identity_access_management": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "sys_infrastructure_as_code": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "sys_log_analysis_forensics": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "sys_network_troubleshooting": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "sys_pentest_vulnerability_scan": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "sys_shell_scripting": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "vision_architecture_diagram": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3.0
+      },
+      "vision_chart_data_decoding": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3.0
+      },
+      "vision_design_token_extraction": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3.0
+      },
+      "vision_document_ocr_parsing": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3.0
+      },
+      "vision_multimodal_safety_check": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3.0
+      },
+      "vision_optical_inspection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3.0
+      },
+      "vision_spatial_layout_reasoning": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3.0
+      },
+      "vision_ui_wireframe_analysis": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3.0
+      },
+      "vision_video_temporal_reasoning": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3.0
+      }
+    },
+    "domain_breakdown": {
+      "software_engineering": {
+        "total_samples": 36.0,
+        "domain_accuracy": 1.0,
+        "category_accuracy": 1.0
+      },
+      "research_retrieval": {
+        "total_samples": 36.0,
+        "domain_accuracy": 1.0,
+        "category_accuracy": 1.0
+      },
+      "creative_prose": {
+        "total_samples": 36.0,
+        "domain_accuracy": 1.0,
+        "category_accuracy": 1.0
+      },
+      "math_symbolic": {
+        "total_samples": 36.0,
+        "domain_accuracy": 1.0,
+        "category_accuracy": 1.0
+      },
+      "data_engineering": {
+        "total_samples": 36.0,
+        "domain_accuracy": 1.0,
+        "category_accuracy": 1.0
+      },
+      "system_admin_security": {
+        "total_samples": 36.0,
+        "domain_accuracy": 1.0,
+        "category_accuracy": 1.0
+      },
+      "financial_quantitative": {
+        "total_samples": 36.0,
+        "domain_accuracy": 1.0,
+        "category_accuracy": 1.0
+      },
+      "hardware_embedded": {
+        "total_samples": 36.0,
+        "domain_accuracy": 1.0,
+        "category_accuracy": 1.0
+      },
+      "conversational_admin": {
+        "total_samples": 31.0,
+        "domain_accuracy": 1.0,
+        "category_accuracy": 1.0
+      },
+      "browser_automation": {
+        "total_samples": 27.0,
+        "domain_accuracy": 1.0,
+        "category_accuracy": 1.0
+      },
+      "multimodal_vision": {
+        "total_samples": 27.0,
+        "domain_accuracy": 1.0,
+        "category_accuracy": 1.0
+      },
+      "mcp_protocol_routing": {
+        "total_samples": 27.0,
+        "domain_accuracy": 1.0,
+        "category_accuracy": 1.0
+      }
+    },
+    "concurrency_sweep": []
+  },
+  "multilabel_results": {
+    "total_samples": 300,
+    "exact_match_ratio": 1.0,
+    "hamming_loss": 0.0,
+    "jaccard_index": 1.0,
+    "macro_f1": 1.0,
+    "micro_f1": 1.0,
+    "laps_score": 86.7,
+    "facet_accuracies": {
+      "domains": 1.0,
+      "intents": 1.0,
+      "modalities": 1.0,
+      "complexity": 1.0,
+      "safety_flags": 1.0,
+      "tool_dependencies": 1.0
+    },
+    "latency": {
+      "p50_ms": 46.41,
+      "p90_ms": 69.0,
+      "p95_ms": 71.19,
+      "p99_ms": 74.5,
+      "mean_ms": 47.22,
+      "std_ms": 15.71,
+      "min_ms": 21.02,
+      "max_ms": 74.85,
+      "throughput_rps": 3289.03,
+      "concurrency": 10
+    },
+    "concurrency_sweep": []
+  },
+  "compound_results": {
+    "total_samples": 300,
+    "is_compound_accuracy": 1.0,
+    "task_boundary_f1": 1.0,
+    "task_boundary_precision": 1.0,
+    "task_boundary_recall": 1.0,
+    "agent_allocation_accuracy": 1.0,
+    "intent_category_accuracy": 0.8987,
+    "dag_structural_validity": 1.0,
+    "dag_topological_match_pct": 1.0,
+    "dependency_edge_f1": 1.0,
+    "dependency_edge_jaccard": 1.0,
+    "mean_graph_edit_distance": 0.0,
+    "laps_score": 85.91,
+    "agent_confusion_matrix": {
+      "data_engineer": {
+        "data_engineer": 103
+      },
+      "coder": {
+        "coder": 166
+      },
+      "writer": {
+        "writer": 101
+      },
+      "hardware_engineer": {
+        "hardware_engineer": 118
+      },
+      "finance_officer": {
+        "finance_officer": 45
+      },
+      "vision_analyst": {
+        "vision_analyst": 45
+      },
+      "browser_navigator": {
+        "browser_navigator": 45
+      },
+      "mcp_orchestrator": {
+        "mcp_orchestrator": 60
+      },
+      "sysadmin": {
+        "sysadmin": 82
+      },
+      "triage_interviewer": {
+        "triage_interviewer": 49
+      },
+      "coordinator": {
+        "coordinator": 22
+      },
+      "researcher": {
+        "researcher": 53
+      },
+      "safety_sentinel": {
+        "safety_sentinel": 88
+      },
+      "math_specialist": {
+        "math_specialist": 10
+      }
+    },
+    "latency": {
+      "p50_ms": 46.83,
+      "p90_ms": 70.69,
+      "p95_ms": 72.95,
+      "p99_ms": 74.68,
+      "mean_ms": 47.22,
+      "std_ms": 16.6,
+      "min_ms": 20.1,
+      "max_ms": 75.0,
+      "throughput_rps": 3314.02,
+      "concurrency": 10
+    },
+    "dag_pattern_breakdown": {
+      "diamond_dag": {
+        "count": 65.0,
+        "boundary_f1": 1.0,
+        "agent_accuracy": 1.0,
+        "dag_validity": 1.0,
+        "topological_match": 1.0
+      },
+      "parallel_map_reduce": {
+        "count": 65.0,
+        "boundary_f1": 1.0,
+        "agent_accuracy": 1.0,
+        "dag_validity": 1.0,
+        "topological_match": 1.0
+      },
+      "dynamic_cyclic": {
+        "count": 70.0,
+        "boundary_f1": 1.0,
+        "agent_accuracy": 1.0,
+        "dag_validity": 1.0,
+        "topological_match": 1.0
+      },
+      "atomic_fakeout": {
+        "count": 100.0,
+        "boundary_f1": 1.0,
+        "agent_accuracy": 1.0,
+        "dag_validity": 1.0,
+        "topological_match": 1.0
+      }
+    },
+    "concurrency_sweep": []
+  },
+  "adversarial_results": {
+    "total_samples": 200,
+    "overall_accuracy": 1.0,
+    "injection_detection_rate": 1.0,
+    "multilingual_accuracy": 1.0,
+    "distractor_robustness_rate": 1.0,
+    "safety_flag_accuracy": 1.0,
+    "laps_score": 86.15,
+    "latency": {
+      "p50_ms": 49.09,
+      "p90_ms": 70.8,
+      "p95_ms": 72.39,
+      "p99_ms": 73.74,
+      "mean_ms": 48.48,
+      "std_ms": 16.05,
+      "min_ms": 20.03,
+      "max_ms": 74.8,
+      "throughput_rps": 3200.4,
+      "concurrency": 10
+    },
+    "confusion_pairs": [],
+    "stress_breakdown": {
+      "prompt_injection": {
+        "total": 70.0,
+        "accuracy": 1.0
+      },
+      "multilingual_codeswitch": {
+        "total": 70.0,
+        "accuracy": 1.0
+      },
+      "misleading_distractor": {
+        "total": 60.0,
+        "accuracy": 1.0
+      }
+    }
+  }
+}

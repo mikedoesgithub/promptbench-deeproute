@@ -1,4 +1,4 @@
-"""Anthropic Messages API adapter for Claude models."""
+"""Anthropic Messages API adapter for Claude models with dynamic prompt injection and sanitization."""
 
 from __future__ import annotations
 import os
@@ -8,6 +8,9 @@ import httpx
 
 from src.models.base import BaseModelAdapter, extract_json_payload
 from src.models.prompts import (
+    build_atomic_system_prompt,
+    build_compound_system_prompt,
+    build_multilabel_system_prompt,
     SYSTEM_ROUTING_PROMPT,
     ATOMIC_PROMPT_TEMPLATE,
     MULTILABEL_PROMPT_TEMPLATE,
@@ -70,18 +73,26 @@ class AnthropicAdapter(BaseModelAdapter):
         return parsed, latency_ms
 
     async def predict_atomic(self, prompt: str) -> AtomicPrediction:
+        system_prompt = build_atomic_system_prompt(self.taxonomy) if self.taxonomy else SYSTEM_ROUTING_PROMPT
         user_prompt = ATOMIC_PROMPT_TEMPLATE.format(prompt=prompt)
-        parsed, lat = await self._call_anthropic(SYSTEM_ROUTING_PROMPT, user_prompt)
+        parsed, lat = await self._call_anthropic(system_prompt, user_prompt)
+
+        raw_cat = parsed.get("predicted_category", "unknown")
+        sanitized_cat = self.sanitize_category(raw_cat)
+        raw_dom = parsed.get("predicted_domain")
 
         top_k = []
         if "top_k" in parsed and isinstance(parsed["top_k"], list):
             for item in parsed["top_k"]:
                 if isinstance(item, dict) and "category" in item:
-                    top_k.append(TopKCategory(category=item["category"], confidence=float(item.get("confidence", 0.5))))
+                    top_k.append(TopKCategory(
+                        category=self.sanitize_category(item["category"]),
+                        confidence=float(item.get("confidence", 0.5))
+                    ))
 
         return AtomicPrediction(
-            predicted_category=parsed.get("predicted_category", "unknown"),
-            predicted_domain=parsed.get("predicted_domain"),
+            predicted_category=sanitized_cat,
+            predicted_domain=raw_dom,
             confidence=float(parsed.get("confidence", 1.0)),
             top_k=top_k,
             latency_ms=round(lat, 2),
@@ -89,12 +100,15 @@ class AnthropicAdapter(BaseModelAdapter):
         )
 
     async def predict_multilabel(self, prompt: str) -> MultiLabelPrediction:
+        system_prompt = build_multilabel_system_prompt(self.taxonomy) if self.taxonomy else SYSTEM_ROUTING_PROMPT
         user_prompt = MULTILABEL_PROMPT_TEMPLATE.format(prompt=prompt)
-        parsed, lat = await self._call_anthropic(SYSTEM_ROUTING_PROMPT, user_prompt)
+        parsed, lat = await self._call_anthropic(system_prompt, user_prompt)
+
+        sanitized_intents = [self.sanitize_category(cat) for cat in parsed.get("intents", [])]
 
         return MultiLabelPrediction(
             domains=parsed.get("domains", []),
-            intents=parsed.get("intents", []),
+            intents=sanitized_intents,
             modalities=parsed.get("modalities", []),
             complexity=parsed.get("complexity"),
             safety_flags=parsed.get("safety_flags", ["benign_standard"]),
@@ -105,16 +119,17 @@ class AnthropicAdapter(BaseModelAdapter):
         )
 
     async def predict_compound(self, prompt: str) -> CompoundMultiPrediction:
+        system_prompt = build_compound_system_prompt(self.subagents, self.taxonomy) if self.subagents else SYSTEM_ROUTING_PROMPT
         user_prompt = COMPOUND_PROMPT_TEMPLATE.format(prompt=prompt)
-        parsed, lat = await self._call_anthropic(SYSTEM_ROUTING_PROMPT, user_prompt)
+        parsed, lat = await self._call_anthropic(system_prompt, user_prompt)
 
         sub_tasks = []
         for task in parsed.get("sub_tasks", []):
             sub_tasks.append(SubTask(
                 id=str(task.get("id", f"task_{len(sub_tasks)+1}")),
                 text_span=str(task.get("text_span", "")),
-                assigned_subagent=str(task.get("assigned_subagent", "coordinator")),
-                intent_category=str(task.get("intent_category", "unknown")),
+                assigned_subagent=self.sanitize_subagent(str(task.get("assigned_subagent", "coordinator"))),
+                intent_category=self.sanitize_category(str(task.get("intent_category", "unknown"))),
                 dependencies=[str(d) for d in task.get("dependencies", [])]
             ))
 

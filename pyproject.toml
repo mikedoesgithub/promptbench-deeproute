@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "promptbench-deeproute"
-version = "1.0.0"
+version = "2.0.0"
 description = "A benchmark suite engineered to test fast, low-latency System 1 models on prompt classification, multi-label tagging, and compound prompt decomposition into specialist subagents."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -19,13 +19,19 @@ dependencies = [
     "httpx>=0.25.0",
 ]
 
+[project.scripts]
+promptbench = "run_benchmark:main"
+
 [project.optional-dependencies]
 dev = [
     "pytest>=8.0.0",
     "pytest-asyncio>=0.23.0",
 ]
 
+[tool.setuptools]
+py-modules = ["run_benchmark"]
+packages = ["src", "src.models", "src.evaluators", "src.harness"]
+
 [tool.pytest.ini_options]
 pythonpath = ["."]
 testpaths = ["tests"]
-

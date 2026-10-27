@@ -5,7 +5,7 @@
 [![Taxonomy Granularity](https://img.shields.io/badge/categories-108%20classes%20/%2012%20domains-purple.svg)]()
 [![Dataset Scale](https://img.shields.io/badge/dataset%20scale-1%2C200%2B%20samples-blueviolet.svg)]()
 [![System 1 Latency Budget](https://img.shields.io/badge/latency%20target-%3C100ms-orange.svg)]()
-[![Test Suite](https://img.shields.io/badge/tests-30%20passing-success.svg)]()
+[![Test Suite](https://img.shields.io/badge/tests-38%20passing-success.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-green.svg)]()
 
 **PromptBench-DeepRoute** is a premier, industrial-strength evaluation and benchmarking framework specifically engineered to evaluate fast, low-latency **System 1 models** (e.g., Gemini Flash, GPT-4o-mini, Claude 3.5 Haiku, Jev, and specialized local routing models) on prompt classification, multi-aspect tagging, compound task decomposition into specialist subagent execution DAGs, and adversarial stress robustness.
@@ -197,69 +197,93 @@ Every run generates an interactive, publication-ready HTML report in `results/da
 
 ---
 
-## 🚀 Quickstart & Usage
+## 🚀 Quickstart & CLI Usage
 
-### 1. Setup Environment
+PromptBench-DeepRoute can be executed directly via the standard open-source CLI entrypoint `promptbench` or via `python run_benchmark.py`.
+
+### 1. Installation via pip / uv
 ```bash
 cd /home/saige/.gemini/antigravity/scratch/prompt-classifier-benchmark
+
+# Option A: Standard pip
+python -m venv .venv
+source .venv/bin/activate
+pip install -e .
+
+# Option B: Ultra-fast uv
 uv venv .venv
 source .venv/bin/activate
 uv pip install -e .
+
+# Verify installation
+promptbench --help
 ```
 
 ### 2. Run Offline Benchmark (Mock / Oracle)
 ```bash
 # Run in Oracle mode (100% ground truth ceiling) across all 4 splits (1,200 samples)
-python run_benchmark.py --oracle --mode all --concurrency 10 --concurrency-sweep 1,10,25
+promptbench --oracle --mode all --concurrency 10 --concurrency-sweep 1,10,25
 
-# Run in Mock mode with realistic System 1 noise
-python run_benchmark.py --mock --noise-rate 0.08 --mode all --concurrency 10
+# Run in Mock mode with simulated System 1 noise
+promptbench --mock --noise-rate 0.08 --mode all --concurrency 10
 ```
 
 ### 3. Run Specific Evaluation Splits
 ```bash
-# Atomic Core split only (400 samples)
-python run_benchmark.py --mock --mode atomic
+# Split 1: Atomic Core split only (400 samples across 108 categories)
+promptbench --mock --mode atomic
 
-# Multi-label Faceted split only (300 samples)
-python run_benchmark.py --mock --mode multilabel
+# Split 2: Multi-label Faceted split only (300 samples)
+promptbench --mock --mode multilabel
 
-# Compound DAG Advanced split only (300 samples)
-python run_benchmark.py --mock --mode multi
+# Split 3: Compound DAG Advanced split only (300 samples across 14 subagents)
+promptbench --mock --mode multi
 
-# Adversarial Stress split only (200 samples)
-python run_benchmark.py --mock --mode adversarial
+# Split 4: Adversarial Stress split only (200 samples: injections, code-switch, distractors)
+promptbench --mock --mode adversarial
 ```
 
-### 4. Evaluate Live Models
+### 4. Benchmark Local & Cloud System 1 Routing Models
+
+#### Local Models (Jev, vLLM, Ollama)
+```bash
+# Local Jev or custom router on local port
+promptbench --model jev-system1-router --base-url http://localhost:8000/v1 --mode all
+
+# Local Ollama router (e.g. llama3.2, qwen2.5)
+promptbench --model qwen2.5:3b --base-url http://localhost:11434/v1 --mode all
+
+# Local vLLM instance with high concurrency
+promptbench --model meta-llama/Llama-3.2-3B-Instruct --base-url http://localhost:8000/v1 --concurrency 50
+```
+
+#### Cloud Frontier Fast Models
 ```bash
 # Google Gemini 2.5 Flash
 export GEMINI_API_KEY="your-api-key"
-python run_benchmark.py --model gemini-2.5-flash --mode all --concurrency 25
-
-# OpenAI GPT-4o-mini
-export OPENAI_API_KEY="your-api-key"
-python run_benchmark.py --model gpt-4o-mini --mode all --concurrency 25
+promptbench --model gemini-2.5-flash --mode all --concurrency 25
 
 # Anthropic Claude 3.5 Haiku
 export ANTHROPIC_API_KEY="your-api-key"
-python run_benchmark.py --model claude-3-5-haiku-20241022 --mode all --concurrency 25
+promptbench --model claude-3-5-haiku-20241022 --mode all --concurrency 25
 
-# Local vLLM / Ollama instance
-python run_benchmark.py --model my-system1-router --base-url http://localhost:8000/v1 --mode all
+# OpenAI GPT-4o-mini
+export OPENAI_API_KEY="your-api-key"
+promptbench --model gpt-4o-mini --mode all --concurrency 25
 ```
 
 ---
 
 ## 🧪 Comprehensive Unit & Fuzzing Test Suite
 
-PromptBench-DeepRoute maintains a 100% pass rate across 30 unit and integration tests:
+PromptBench-DeepRoute maintains a 100% pass rate across **38 unit and integration tests**:
 
 ```bash
 pytest tests/ -v
 ```
 
 Test coverage includes:
+- **`tests/test_sanitizer_and_prompts.py`**: Category sanitization, subagent sanitization, fuzzy normalization, dynamic prompt builders, and `promptbench` CLI entrypoint execution.
 - **`tests/test_fuzzing.py`**: Corrupted JSON extraction, missing keys, hallucinated categories/agents, cyclic dependency graphs, dangling references, duplicate IDs, LAPS edge cases.
 - **`tests/test_dag_complex_topologies.py`**: Diamond DAG matching, Fan-Out/Fan-In 6-node graphs, spurious cross-edge detection, cyclic verification loops (`allow_cyclic`), and False-Compound Traps.
 - **`tests/test_metrics.py`**: Expected Calibration Error (ECE), token span IoU Hungarian matching, DAG acyclicity validation, Graph Edit Distance (GED).

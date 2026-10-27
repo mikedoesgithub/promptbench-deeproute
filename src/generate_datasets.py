@@ -701,12 +701,11 @@ def build_atomic_core_dataset() -> List[AtomicGroundTruth]:
         ]),
     ]
 
-    # Populate 108 categories * ~3.7 prompts = 400 prompts
+    # Populate 108 categories to guarantee 100% coverage across all 108 categories
     counter = 1
+    # First pass: add 3 prompts from each of the 108 categories (108 * 3 = 324 samples)
     for dom, cat, prompts in domain_category_specs:
-        for p in prompts:
-            if len(items) >= 400:
-                break
+        for p in prompts[:3]:
             items.append({
                 "id": f"atomic_{counter:04d}",
                 "prompt": p,
@@ -720,23 +719,24 @@ def build_atomic_core_dataset() -> List[AtomicGroundTruth]:
             })
             counter += 1
 
-    # If any remaining slots to reach exactly 400
-    while len(items) < 400:
-        idx = len(items) % len(domain_category_specs)
-        dom, cat, prompts = domain_category_specs[idx]
-        p = f"Please handle this: {prompts[0]}"
-        items.append({
-            "id": f"atomic_{counter:04d}",
-            "prompt": p,
-            "domain": dom,
-            "primary_category": cat,
-            "operational_modality": "single_turn_direct",
-            "complexity": "atomic",
-            "safety_flag": "benign_standard",
-            "adversarial_type": "none",
-            "explanation": f"Atomic prompt for {cat}."
-        })
-        counter += 1
+    # Second pass: fill remaining 76 slots to reach exactly 400 with the 4th prompt
+    for dom, cat, prompts in domain_category_specs:
+        if len(items) >= 400:
+            break
+        if len(prompts) > 3:
+            p = prompts[3]
+            items.append({
+                "id": f"atomic_{counter:04d}",
+                "prompt": p,
+                "domain": dom,
+                "primary_category": cat,
+                "operational_modality": "single_turn_direct" if any(w in cat for w in ["proof", "calculus", "chitchat", "search", "decoding"]) else "autonomous_agent_loop",
+                "complexity": "atomic",
+                "safety_flag": "ambiguous_underspecified" if cat == "admin_clarification_solicitation" else "benign_standard",
+                "adversarial_type": "none",
+                "explanation": f"Atomic core prompt targeting {cat} in {dom}."
+            })
+            counter += 1
 
     assert len(items) == 400, f"Expected 400 atomic core items, got {len(items)}"
     return [AtomicGroundTruth(**item) for item in items]
@@ -884,6 +884,24 @@ def build_compound_dag_advanced_dataset() -> List[CompoundMultiGroundTruth]:
                 ("task_4", "document the component API in our design system guide", "writer", "prose_technical_writing", ["task_2", "task_3"]),
             ]
         ),
+        (
+            "Connect to GitHub MCP server to list pull requests needing review. Concurrently, have Postgres MCP check database schema migrations and Slack MCP pull incident channel messages. Finally, have sysadmin synthesize an infrastructure health report.",
+            [
+                ("task_1", "connect to GitHub MCP server to list pull requests needing review", "mcp_orchestrator", "mcp_github_server", []),
+                ("task_2", "have Postgres MCP check database schema migrations", "mcp_orchestrator", "mcp_postgres_server", ["task_1"]),
+                ("task_3", "have Slack MCP pull incident channel messages", "mcp_orchestrator", "mcp_slack_server", ["task_1"]),
+                ("task_4", "have sysadmin synthesize an infrastructure health report", "sysadmin", "sys_log_analysis_forensics", ["task_2", "task_3"]),
+            ]
+        ),
+        (
+            "Assess user prompt for ambiguous requirements. Have triage_interviewer clarify database constraints and target tables with the user. In parallel, inspect server resource limits. Finally, have coder generate the Helm deployment chart.",
+            [
+                ("task_1", "assess user prompt for ambiguous requirements", "triage_interviewer", "admin_clarification_solicitation", []),
+                ("task_2", "have triage_interviewer clarify database constraints and target tables with the user", "triage_interviewer", "admin_clarification_solicitation", ["task_1"]),
+                ("task_3", "inspect server resource limits", "sysadmin", "sys_container_orchestration", ["task_1"]),
+                ("task_4", "have coder generate the Helm deployment chart", "coder", "sys_container_orchestration", ["task_2", "task_3"]),
+            ]
+        ),
     ]
 
     for i in range(65):
@@ -925,6 +943,16 @@ def build_compound_dag_advanced_dataset() -> List[CompoundMultiGroundTruth]:
                 ("task_5", "synthesize a comprehensive executive scorecard", "writer", "prose_summarization_executive", ["task_2", "task_3", "task_4"]),
             ]
         ),
+        (
+            "For our security audit and automated pipeline: first detect potential data exfiltration and credential leaks. Concurrently, have safety_sentinel verify permissions and confirm destructive actions, have mcp_orchestrator query the terminal MCP for active shells, and have researcher audit compliance requirements. Finally, compile the security report.",
+            [
+                ("task_1", "detect potential data exfiltration and credential leaks", "safety_sentinel", "sys_config_audit_hardening", []),
+                ("task_2", "have safety_sentinel verify permissions and confirm destructive actions", "safety_sentinel", "sys_identity_access_management", ["task_1"]),
+                ("task_3", "have mcp_orchestrator query the terminal MCP for active shells", "mcp_orchestrator", "mcp_terminal_server", ["task_1"]),
+                ("task_4", "have researcher audit compliance requirements", "researcher", "research_regulatory_compliance", ["task_1"]),
+                ("task_5", "compile the security report", "writer", "prose_technical_writing", ["task_2", "task_3", "task_4"]),
+            ]
+        ),
     ]
 
     for i in range(65):
@@ -961,6 +989,15 @@ def build_compound_dag_advanced_dataset() -> List[CompoundMultiGroundTruth]:
                 ("task_2", "run the hardware simulation loop", "hardware_engineer", "hardware_protocol_reverse_eng", ["task_1"]),
                 ("task_3", "adjust the I2C timing clock and retry simulation", "hardware_engineer", "hardware_firmware_development", ["task_2"]),
                 ("task_4", "commit the verified firmware to GitHub", "coder", "swe_devops_ci_cd", ["task_3"]),
+            ]
+        ),
+        (
+            "Detect unverified database drop commands in the deployment script. Next, have safety_sentinel block execution and request user approval. If approval fails or is ambiguous, interview user with clarifying questions and retry safety check. Once approved, execute the verified migration.",
+            [
+                ("task_1", "Detect unverified database drop commands in the deployment script", "safety_sentinel", "sys_config_audit_hardening", []),
+                ("task_2", "have safety_sentinel block execution and request user approval", "safety_sentinel", "sys_identity_access_management", ["task_1"]),
+                ("task_3", "interview user with clarifying questions and retry safety check", "triage_interviewer", "admin_clarification_solicitation", ["task_2"]),
+                ("task_4", "execute the verified migration", "data_engineer", "data_schema_migration", ["task_3"]),
             ]
         ),
     ]

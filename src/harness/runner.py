@@ -52,12 +52,29 @@ class BenchmarkRunner:
         self.concurrency_sweep = concurrency_sweep or []
         self.semaphore = asyncio.Semaphore(concurrency)
 
-        # Load taxonomy category to domain mapping
+        # Load taxonomy and subagents configurations
         with open(taxonomy_path, "r", encoding="utf-8") as f:
             tax_data = yaml.safe_load(f)
+        self.taxonomy_data = tax_data
+
+        subagents_path = self.taxonomy_path.parent / "subagents.yaml"
+        self.subagents_data = {}
+        if subagents_path.exists():
+            with open(subagents_path, "r", encoding="utf-8") as f:
+                self.subagents_data = yaml.safe_load(f)
+
+        # Pass authoritative taxonomy and subagents to adapter
+        if hasattr(self.adapter, "set_configs"):
+            self.adapter.set_configs(self.taxonomy_data, self.subagents_data)
+
         self.cat_to_domain = {}
-        for cat, info in tax_data.get("granular_categories", {}).items():
-            self.cat_to_domain[cat] = info.get("domain", "unknown")
+        if "tier1_domains" in tax_data:
+            for dom_key, dom_val in tax_data.get("tier1_domains", {}).items():
+                for cat in dom_val.get("categories", []):
+                    self.cat_to_domain[cat] = dom_key
+        if "granular_categories" in tax_data:
+            for cat, info in tax_data.get("granular_categories", {}).items():
+                self.cat_to_domain[cat] = info.get("domain", "unknown")
 
     def _resolve_dataset_path(self, primary_filename: str, fallback_filename: str) -> Path:
         primary = self.datasets_dir / primary_filename
