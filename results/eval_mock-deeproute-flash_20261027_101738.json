@@ -1,0 +1,33 @@
+{
+  "model_name": "mock-deeproute-flash",
+  "timestamp": "2026-10-27 10:17:38",
+  "total_runtime_seconds": 0.05,
+  "atomic_results": null,
+  "multilabel_results": {
+    "total_samples": 100,
+    "exact_match_ratio": 0.01,
+    "hamming_loss": 0.1798,
+    "jaccard_index": 0.2214,
+    "macro_f1": 0.2239,
+    "micro_f1": 0.3377,
+    "facet_accuracies": {
+      "domains": 0.2108,
+      "intents": 0.0752,
+      "modalities": 0.2933,
+      "complexity": 0.3,
+      "safety_flags": 1.0,
+      "tool_dependencies": 0.245
+    },
+    "latency": {
+      "p50_ms": 48.39,
+      "p90_ms": 66.69,
+      "p95_ms": 69.41,
+      "p99_ms": 73.16,
+      "mean_ms": 46.18,
+      "min_ms": 20.15,
+      "max_ms": 74.36,
+      "throughput_rps": 3040.06
+    }
+  },
+  "compound_results": null
+}

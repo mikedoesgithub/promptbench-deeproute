@@ -1,0 +1,679 @@
+version: "2.0"
+taxonomy_name: "PromptBench-DeepRoute Expanded Industrial Taxonomy"
+
+tier1_domains:
+  software_engineering:
+    display_name: "Software Engineering"
+    description: "Code generation, refactoring, debugging, devops, architecture, testing, dependencies, APIs, and performance profiling."
+    categories:
+      - swe_code_generation
+      - swe_code_refactoring
+      - swe_debugging_bug_hunting
+      - swe_devops_ci_cd
+      - swe_system_architecture
+      - swe_test_writing
+      - swe_dependency_management
+      - swe_api_integration
+      - swe_performance_profiling
+
+  research_retrieval:
+    display_name: "Research & Information Retrieval"
+    description: "Literature synthesis, factual search, competitive intelligence, data extraction, surveys, citations, patents, and compliance."
+    categories:
+      - research_literature_synthesis
+      - research_factual_search
+      - research_competitive_intelligence
+      - research_data_extraction
+      - research_deep_survey
+      - research_citation_verification
+      - research_patent_analysis
+      - research_regulatory_compliance
+      - research_source_credibility
+
+  creative_prose:
+    display_name: "Creative & Prose Writing"
+    description: "Longform essays, editing, tone transfer, copywriting, storytelling, correspondence, technical writing, summaries, and ideation."
+    categories:
+      - prose_longform_essay
+      - prose_editing_proofreading
+      - prose_tone_transfer
+      - prose_copywriting_marketing
+      - prose_storytelling_narrative
+      - prose_email_correspondence
+      - prose_technical_writing
+      - prose_summarization_executive
+      - prose_creative_ideation
+
+  math_symbolic:
+    display_name: "Mathematical & Symbolic Reasoning"
+    description: "Formal proofs, algebra, probability, combinatorics, logic puzzles, numerical analysis, linear algebra, optimization, and information theory."
+    categories:
+      - math_formal_proof
+      - math_algebra_calculus
+      - math_probability_statistics
+      - math_combinatorics_discrete
+      - math_logic_puzzles
+      - math_numerical_computation
+      - math_linear_algebra
+      - math_optimization_theory
+      - math_information_theory
+
+  data_engineering:
+    display_name: "Data Engineering & Analysis"
+    description: "SQL authoring, dataframe transformations, ETL pipelines, visualizations, migrations, profiling, lakehouse storage, data quality, and vector indexes."
+    categories:
+      - data_sql_query_authoring
+      - data_dataframe_transformation
+      - data_etl_pipeline_design
+      - data_visualization_spec
+      - data_schema_migration
+      - data_statistical_profiling
+      - data_lakehouse_storage
+      - data_quality_validation
+      - data_vector_index_tuning
+
+  system_admin_security:
+    display_name: "System Administration & Security"
+    description: "Shell automation, containers, config hardening, networking, CVE analysis, forensics, backups, IAM audits, and infrastructure as code."
+    categories:
+      - sys_shell_scripting
+      - sys_container_orchestration
+      - sys_config_audit_hardening
+      - sys_network_troubleshooting
+      - sys_pentest_vulnerability_scan
+      - sys_log_analysis_forensics
+      - sys_backup_disaster_recovery
+      - sys_identity_access_management
+      - sys_infrastructure_as_code
+
+  financial_quantitative:
+    display_name: "Financial & Quantitative"
+    description: "Budgeting, ledger accounting, interest calculations, purchase memos, tokenomics, tax strategy, risk modeling, cap tables, and unit economics."
+    categories:
+      - finance_budgeting_forecasting
+      - finance_ledger_accounting
+      - finance_rate_calculations
+      - finance_memo_purchase_proposal
+      - finance_crypto_tokenomics
+      - finance_tax_deduction_strategy
+      - finance_portfolio_risk_modeling
+      - finance_equity_cap_table
+      - finance_unit_economics
+
+  hardware_embedded:
+    display_name: "Hardware / PCB / Embedded"
+    description: "Firmware, schematics, BOM optimization, PCB layout, signal integrity, bus protocols, RF design, thermal management, and DFM validation."
+    categories:
+      - hardware_firmware_development
+      - hardware_schematic_analysis
+      - hardware_bom_optimization
+      - hardware_pcb_layout_routing
+      - hardware_signal_integrity_power
+      - hardware_protocol_reverse_eng
+      - hardware_rf_wireless_design
+      - hardware_thermal_management
+      - hardware_mfg_dfm_validation
+
+  conversational_admin:
+    display_name: "Conversational & Administrative"
+    description: "General chitchat, scheduling, format conversion, prompt optimization, clarification solicitation, help capabilities, workflow, file management, and session state."
+    categories:
+      - admin_general_chitchat
+      - admin_scheduling_reminder
+      - admin_formatting_conversion
+      - admin_meta_prompt_optimization
+      - admin_clarification_solicitation
+      - admin_help_capabilities
+      - admin_workflow_orchestration
+      - admin_file_management
+      - admin_session_state_context
+
+  browser_automation:
+    display_name: "Browser Automation & Computer Use"
+    description: "DOM manipulation, web scraping, form submission, canvas inspection, session state, network interception, screenshots, tabs, and accessibility trees."
+    categories:
+      - browser_dom_interaction
+      - browser_web_scraping
+      - browser_form_submission
+      - browser_canvas_inspection
+      - browser_session_cookies
+      - browser_network_interception
+      - browser_screenshot_capture
+      - browser_tab_management
+      - browser_accessibility_tree
+
+  multimodal_vision:
+    display_name: "Multimodal & Vision"
+    description: "UI wireframe analysis, architecture diagrams, chart decoding, optical inspection, OCR parsing, design tokens, spatial layout, video frames, and visual safety."
+    categories:
+      - vision_ui_wireframe_analysis
+      - vision_architecture_diagram
+      - vision_chart_data_decoding
+      - vision_optical_inspection
+      - vision_document_ocr_parsing
+      - vision_design_token_extraction
+      - vision_spatial_layout_reasoning
+      - vision_video_temporal_reasoning
+      - vision_multimodal_safety_check
+
+  mcp_protocol_routing:
+    display_name: "Model Context Protocol (MCP) Routing"
+    description: "Identifying and delegating to specialized MCP tool servers (GitHub, Postgres, Slack, Terminal, Filesystem, Memory, Fetch, Search, Tool Discovery)."
+    categories:
+      - mcp_github_server
+      - mcp_postgres_server
+      - mcp_slack_server
+      - mcp_terminal_server
+      - mcp_filesystem_server
+      - mcp_memory_knowledge_graph
+      - mcp_fetch_http_server
+      - mcp_brave_search_server
+      - mcp_tool_negotiation_discovery
+
+tier2_modalities:
+  single_turn_direct:
+    display_name: "Single-turn direct response"
+    description: "Requires only an immediate, stateless answer without invoking tools or multi-step reasoning loops."
+  autonomous_agent_loop:
+    display_name: "Autonomous multi-turn agent loop"
+    description: "Requires iterative plan-execute-inspect cycles with multiple tool calls."
+  human_in_the_loop:
+    display_name: "Human-in-the-loop verification required"
+    description: "High-stakes or irreversible action requiring explicit confirmation from human before proceeding."
+  destructive_write:
+    display_name: "Destructive / Write-heavy execution"
+    description: "Modifies filesystem, git history, database state, cloud resources, or executes shell commands."
+  read_only_lookup:
+    display_name: "Read-only lookup"
+    description: "Accesses external data or files without creating side effects or state modifications."
+
+tier3_complexities:
+  atomic:
+    display_name: "Atomic"
+    description: "Single step, trivial execution, no decomposition required."
+  sequential_pipeline:
+    display_name: "Sequential Pipeline"
+    description: "Step-by-step linear workflow where output of step N feeds into step N+1."
+  parallel_map_reduce:
+    display_name: "Parallel Map-Reduce"
+    description: "Independent concurrent sub-tasks executed in parallel whose results are aggregated."
+  diamond_dag:
+    display_name: "Diamond DAG"
+    description: "Root task branches into parallel workers before converging at an aggregator task."
+  dynamic_cyclic:
+    display_name: "Dynamic Cyclic"
+    description: "Requires iterative trial-and-error feedback loops with branching conditions and verification gates."
+
+tier4_safety_security:
+  benign_standard:
+    display_name: "Benign standard request"
+    description: "Normal, legitimate user request."
+  indirect_prompt_injection:
+    display_name: "Indirect prompt injection / Jailbreak attempt"
+    description: "Attempts to override system instructions, ignore guidelines, or escape sandbox boundaries."
+  exfiltration_attempt:
+    display_name: "Exfiltration attempt"
+    description: "Attempts to steal environment variables, API keys, credentials, or private files."
+  destructive_unauthorized:
+    display_name: "Destructive unauthorized operation"
+    description: "Irreversible actions like dropping database tables, deleting branches, or spending unapproved budget."
+  ambiguous_underspecified:
+    display_name: "Ambiguous / Underspecified requirement"
+    description: "Critical constraints are missing; agent should ask clarifying questions instead of hallucinating assumptions."
+
+granular_categories:
+  # Software Engineering
+  swe_code_generation:
+    domain: software_engineering
+    description: "Writing new software code implementations, algorithms, and application logic."
+    typical_subagent: coder
+  swe_code_refactoring:
+    domain: software_engineering
+    description: "Restructuring and cleaning up existing code without altering its external behavior."
+    typical_subagent: coder
+  swe_debugging_bug_hunting:
+    domain: software_engineering
+    description: "Locating, diagnosing, and fixing runtime errors, logical bugs, and crashes."
+    typical_subagent: coder
+  swe_devops_ci_cd:
+    domain: software_engineering
+    description: "Creating and tuning CI/CD pipelines, Dockerfiles, Terraform scripts, and deployment configurations."
+    typical_subagent: coder
+  swe_system_architecture:
+    domain: software_engineering
+    description: "High-level software system design, microservices, API schemas, and architectural trade-offs."
+    typical_subagent: coder
+  swe_test_writing:
+    domain: software_engineering
+    description: "Writing unit, integration, mock, and property-based test suites."
+    typical_subagent: coder
+  swe_dependency_management:
+    domain: software_engineering
+    description: "Resolving package conflicts, lockfiles, upgrading deprecated libraries, and supply-chain auditing."
+    typical_subagent: coder
+  swe_api_integration:
+    domain: software_engineering
+    description: "Integrating 3rd party SDKs, webhooks, REST, GraphQL, and gRPC client implementations."
+    typical_subagent: coder
+  swe_performance_profiling:
+    domain: software_engineering
+    description: "CPU/memory profiling, flamegraphs, algorithmic time/space optimization, and caching."
+    typical_subagent: coder
+
+  # Research & Retrieval
+  research_literature_synthesis:
+    domain: research_retrieval
+    description: "Synthesizing scientific literature, academic papers, state-of-the-art benchmarks, and arXiv publications."
+    typical_subagent: researcher
+  research_factual_search:
+    domain: research_retrieval
+    description: "Looking up objective real-world facts, documentation details, release notes, and entity info."
+    typical_subagent: researcher
+  research_competitive_intelligence:
+    domain: research_retrieval
+    description: "Analyzing competitor offerings, pricing strategies, market trends, and product comparisons."
+    typical_subagent: researcher
+  research_data_extraction:
+    domain: research_retrieval
+    description: "Locating and parsing structured data, tables, or statistics from unstructured documents or websites."
+    typical_subagent: researcher
+  research_deep_survey:
+    domain: research_retrieval
+    description: "Conducting comprehensive landscape surveys, taxonomies, and multi-source historical progression analyses."
+    typical_subagent: researcher
+  research_citation_verification:
+    domain: research_retrieval
+    description: "Fact-checking claims, verifying attributions, and validating bibliography references."
+    typical_subagent: researcher
+  research_patent_analysis:
+    domain: research_retrieval
+    description: "Prior art research, patent claim analysis, technical novelty comparison, and IP landscape mapping."
+    typical_subagent: researcher
+  research_regulatory_compliance:
+    domain: research_retrieval
+    description: "Mapping requirements against GDPR, HIPAA, EU AI Act, SOC 2, and ISO certifications."
+    typical_subagent: researcher
+  research_source_credibility:
+    domain: research_retrieval
+    description: "Evaluating bias, methodology rigor, author credentials, and reliability of technical sources."
+    typical_subagent: researcher
+
+  # Creative Prose
+  prose_longform_essay:
+    domain: creative_prose
+    description: "Drafting longform essays, thought leadership pieces, thought-provoking articles, and speeches."
+    typical_subagent: writer
+  prose_editing_proofreading:
+    domain: creative_prose
+    description: "Polishing existing prose, correcting grammar, enhancing flow, rhythm, and clarity."
+    typical_subagent: writer
+  prose_tone_transfer:
+    domain: creative_prose
+    description: "Rewriting text to adopt a specific voice, style, persona, or register (e.g., executive, academic, playful)."
+    typical_subagent: writer
+  prose_copywriting_marketing:
+    domain: creative_prose
+    description: "Crafting marketing copy, landing pages, email subject lines, product value propositions, and advertisements."
+    typical_subagent: writer
+  prose_storytelling_narrative:
+    domain: creative_prose
+    description: "Writing creative fiction, character interactions, dramatic dialogue, and narrative scenes."
+    typical_subagent: writer
+  prose_email_correspondence:
+    domain: creative_prose
+    description: "Composing professional emails, stakeholder updates, executive briefing memos, and diplomatic replies."
+    typical_subagent: writer
+  prose_technical_writing:
+    domain: creative_prose
+    description: "Authoring developer tutorials, API documentation manuals, and step-by-step onboarding guides."
+    typical_subagent: writer
+  prose_summarization_executive:
+    domain: creative_prose
+    description: "Distilling voluminous reports, meeting transcripts, and whitepapers into concise executive briefs."
+    typical_subagent: writer
+  prose_creative_ideation:
+    domain: creative_prose
+    description: "Brainstorming project names, brand taglines, campaign angles, and metaphorical analogies."
+    typical_subagent: writer
+
+  # Mathematical & Symbolic Reasoning
+  math_formal_proof:
+    domain: math_symbolic
+    description: "Constructing rigorous mathematical proofs (direct, induction, contradiction) and theorem derivations."
+    typical_subagent: math_specialist
+  math_algebra_calculus:
+    domain: math_symbolic
+    description: "Solving algebraic systems, integrals, differential equations, optimization problems, and matrix equations."
+    typical_subagent: math_specialist
+  math_probability_statistics:
+    domain: math_symbolic
+    description: "Computing probabilities, Bayesian updates, hypothesis tests, distributions, and statistical estimations."
+    typical_subagent: math_specialist
+  math_combinatorics_discrete:
+    domain: math_symbolic
+    description: "Graph theory algorithms, combinatorial counting, set relations, and discrete mathematics problems."
+    typical_subagent: math_specialist
+  math_logic_puzzles:
+    domain: math_symbolic
+    description: "Solving formal logic puzzles, constraint satisfaction problems, and Boolean logic reduction."
+    typical_subagent: math_specialist
+  math_numerical_computation:
+    domain: math_symbolic
+    description: "Analyzing floating point roundoff, numerical stability, iterative matrix methods, and numerical root-finding."
+    typical_subagent: math_specialist
+  math_linear_algebra:
+    domain: math_symbolic
+    description: "Computing matrix ranks, eigenvalues, singular value decomposition (SVD), and basis projections."
+    typical_subagent: math_specialist
+  math_optimization_theory:
+    domain: math_symbolic
+    description: "Formulating linear programs, convex duals, KKT conditions, and gradient descent convergence proofs."
+    typical_subagent: math_specialist
+  math_information_theory:
+    domain: math_symbolic
+    description: "Calculating Shannon entropy, Kullback-Leibler divergence, mutual information, and channel capacities."
+    typical_subagent: math_specialist
+
+  # Data Engineering & Analysis
+  data_sql_query_authoring:
+    domain: data_engineering
+    description: "Writing SQL queries, CTEs, analytical window functions, indexing hints, and query optimization."
+    typical_subagent: data_engineer
+  data_dataframe_transformation:
+    domain: data_engineering
+    description: "Transforming tabular data using Pandas, Polars, DuckDB, handling grouping, reshaping, and cleaning."
+    typical_subagent: data_engineer
+  data_etl_pipeline_design:
+    domain: data_engineering
+    description: "Designing batch or streaming ETL pipelines, Airflow DAGs, Kafka topics, and data lake ingestion."
+    typical_subagent: data_engineer
+  data_visualization_spec:
+    domain: data_engineering
+    description: "Creating visualization specifications, Matplotlib/Seaborn scripts, Plotly charts, and dashboard layouts."
+    typical_subagent: data_engineer
+  data_schema_migration:
+    domain: data_engineering
+    description: "Defining relational or document schemas, normalization, migrations, foreign keys, and indexing plans."
+    typical_subagent: data_engineer
+  data_statistical_profiling:
+    domain: data_engineering
+    description: "Profiling dataset distributions, detecting outliers, null patterns, skewness, and data drift."
+    typical_subagent: data_engineer
+  data_lakehouse_storage:
+    domain: data_engineering
+    description: "Configuring Parquet, Apache Iceberg, Delta Lake tables, partitioning, compaction, and Z-ordering."
+    typical_subagent: data_engineer
+  data_quality_validation:
+    domain: data_engineering
+    description: "Writing Great Expectations suites, assert validations, anomaly bounds, and schema contract tests."
+    typical_subagent: data_engineer
+  data_vector_index_tuning:
+    domain: data_engineering
+    description: "Tuning HNSW vector indexes, IVF-PQ quantization, cosine/dot product distances, and hybrid search."
+    typical_subagent: data_engineer
+
+  # System Administration & Security
+  sys_shell_scripting:
+    domain: system_admin_security
+    description: "Authoring Bash, Zsh, and POSIX shell scripts, CLI automation tools, and pipe workflows."
+    typical_subagent: sysadmin
+  sys_container_orchestration:
+    domain: system_admin_security
+    description: "Managing Kubernetes resources, Helm charts, Docker Compose environments, and service meshes."
+    typical_subagent: sysadmin
+  sys_config_audit_hardening:
+    domain: system_admin_security
+    description: "Auditing OS configs, SSH hardening, PAM rules, sysctl parameters, and firewall rules."
+    typical_subagent: sysadmin
+  sys_network_troubleshooting:
+    domain: system_admin_security
+    description: "Diagnosing TCP/IP connections, DNS resolution errors, routing issues, SSL/TLS certificates, and packet drops."
+    typical_subagent: sysadmin
+  sys_pentest_vulnerability_scan:
+    domain: system_admin_security
+    description: "Evaluating vulnerability disclosures, threat modeling, security scanning, and mitigation strategies."
+    typical_subagent: sysadmin
+  sys_log_analysis_forensics:
+    domain: system_admin_security
+    description: "Parsing application and system logs, regex extraction, incident triage, and digital forensics."
+    typical_subagent: sysadmin
+  sys_backup_disaster_recovery:
+    domain: system_admin_security
+    description: "Configuring automated database snapshots, cross-region S3 replication, and failover runbooks."
+    typical_subagent: sysadmin
+  sys_identity_access_management:
+    domain: system_admin_security
+    description: "Auditing AWS IAM policies, Okta/OAuth2 setups, RBAC least-privilege permissions, and API tokens."
+    typical_subagent: sysadmin
+  sys_infrastructure_as_code:
+    domain: system_admin_security
+    description: "Writing and maintaining Terraform modules, OpenTofu configs, and Ansible server provisioning playbooks."
+    typical_subagent: sysadmin
+
+  # Financial & Quantitative
+  finance_budgeting_forecasting:
+    domain: financial_quantitative
+    description: "Projecting corporate runway, departmental budgets, cash flow forecasting, and variance analysis."
+    typical_subagent: finance_officer
+  finance_ledger_accounting:
+    domain: financial_quantitative
+    description: "Double-entry bookkeeping, chart of accounts, journal entries, balance sheet reconciliation."
+    typical_subagent: finance_officer
+  finance_rate_calculations:
+    domain: financial_quantitative
+    description: "Calculating APR, APY, loan amortizations, bond yields, discounted cash flows (DCF), and IRR."
+    typical_subagent: finance_officer
+  finance_memo_purchase_proposal:
+    domain: financial_quantitative
+    description: "Writing capital expenditure memos, ROI justification for hardware/software tools, and procurement briefs."
+    typical_subagent: finance_officer
+  finance_crypto_tokenomics:
+    domain: financial_quantitative
+    description: "Modeling token vesting schedules, bonding curves, staking yields, and liquidity pool metrics."
+    typical_subagent: finance_officer
+  finance_tax_deduction_strategy:
+    domain: financial_quantitative
+    description: "Tax deduction calculations, Section 127 education benefits, business expense write-offs, and depreciation."
+    typical_subagent: finance_officer
+  finance_portfolio_risk_modeling:
+    domain: financial_quantitative
+    description: "Calculating portfolio Sharpe ratios, Value-at-Risk (VaR), covariance matrices, and beta coefficients."
+    typical_subagent: finance_officer
+  finance_equity_cap_table:
+    domain: financial_quantitative
+    description: "Modeling founder dilution, option pool expansions, SAFEs, convertible notes, and liquidation waterfalls."
+    typical_subagent: finance_officer
+  finance_unit_economics:
+    domain: financial_quantitative
+    description: "Analyzing customer acquisition cost (CAC), lifetime value (LTV), payback period, and churn rates."
+    typical_subagent: finance_officer
+
+  # Hardware / PCB / Embedded
+  hardware_firmware_development:
+    domain: hardware_embedded
+    description: "Developing embedded C/C++ firmware, register-level drivers, ISRs, and RTOS task architectures."
+    typical_subagent: hardware_engineer
+  hardware_schematic_analysis:
+    domain: hardware_embedded
+    description: "Analyzing schematic diagrams, component pinouts, active/passive choices, and circuit topology."
+    typical_subagent: hardware_engineer
+  hardware_bom_optimization:
+    domain: hardware_embedded
+    description: "Optimizing Bill of Materials (BOM) cost, selecting JLCPCB basic vs extended parts, LCSC sourcing."
+    typical_subagent: hardware_engineer
+  hardware_pcb_layout_routing:
+    domain: hardware_embedded
+    description: "PCB layout rules, trace impedance matching, ground planes, layer stackups, and DRC violations in KiCad."
+    typical_subagent: hardware_engineer
+  hardware_signal_integrity_power:
+    domain: hardware_embedded
+    description: "Decoupling capacitor placement, power delivery network (PDN), EMI/EMC shielding, and high-speed signal integrity."
+    typical_subagent: hardware_engineer
+  hardware_protocol_reverse_eng:
+    domain: hardware_embedded
+    description: "Decoding logic analyzer captures, sniffing SPI/I2C/UART/CAN buses, and reverse engineering wire protocols."
+    typical_subagent: hardware_engineer
+  hardware_rf_wireless_design:
+    domain: hardware_embedded
+    description: "Designing RF matching networks, microstrip antennas, Smith chart matching, and BLE/Wi-Fi layouts."
+    typical_subagent: hardware_engineer
+  hardware_thermal_management:
+    domain: hardware_embedded
+    description: "Calculating component thermal resistance, thermal vias, heatsink sizing, and thermal throttling limits."
+    typical_subagent: hardware_engineer
+  hardware_mfg_dfm_validation:
+    domain: hardware_embedded
+    description: "Validating PCB design for manufacturing (DFM), solder stencil clearances, and pick-and-place files."
+    typical_subagent: hardware_engineer
+
+  # Conversational & Administrative
+  admin_general_chitchat:
+    domain: conversational_admin
+    description: "Casual conversation, pleasantries, greetings, humor, persona checks, and non-technical banter."
+    typical_subagent: coordinator
+  admin_scheduling_reminder:
+    domain: conversational_admin
+    description: "Setting alarms, timers, cron triggers, recurring schedules, and calendar invites."
+    typical_subagent: coordinator
+  admin_formatting_conversion:
+    domain: conversational_admin
+    description: "Transforming text between JSON, YAML, Markdown, CSV, and LaTeX formatting."
+    typical_subagent: coordinator
+  admin_meta_prompt_optimization:
+    domain: conversational_admin
+    description: "Refining LLM prompt instructions, designing system prompts, and optimizing few-shot examples."
+    typical_subagent: coordinator
+  admin_clarification_solicitation:
+    domain: conversational_admin
+    description: "Proactively clarifying ambiguous user requirements, eliciting missing variables and constraints."
+    typical_subagent: triage_interviewer
+  admin_help_capabilities:
+    domain: conversational_admin
+    description: "Explaining system capabilities, available subagents, slash commands, tools, and usage guidelines."
+    typical_subagent: coordinator
+  admin_workflow_orchestration:
+    domain: conversational_admin
+    description: "Sequencing complex multi-step pipelines and handing off context between subagents."
+    typical_subagent: coordinator
+  admin_file_management:
+    domain: conversational_admin
+    description: "Organizing directory hierarchies, renaming files, and maintaining workspace structure."
+    typical_subagent: coordinator
+  admin_session_state_context:
+    domain: conversational_admin
+    description: "Managing conversation context windows, pruning history, and resetting scratch memory."
+    typical_subagent: coordinator
+
+  # Browser Automation & Computer Use
+  browser_dom_interaction:
+    domain: browser_automation
+    description: "Interacting with DOM elements: clicks, keyboard typing, dropdown selects, and dynamic waiting."
+    typical_subagent: browser_navigator
+  browser_web_scraping:
+    domain: browser_automation
+    description: "Extracting dynamic content rendered with JavaScript, handling pagination and scrolling."
+    typical_subagent: browser_navigator
+  browser_form_submission:
+    domain: browser_automation
+    description: "Filling out multi-page web forms, user authentication flows, and data entry dialogs."
+    typical_subagent: browser_navigator
+  browser_canvas_inspection:
+    domain: browser_automation
+    description: "Inspecting and clicking on HTML5 canvas games, interactive SVG graphics, and WebGL viewports."
+    typical_subagent: browser_navigator
+  browser_session_cookies:
+    domain: browser_automation
+    description: "Managing browser cookies, session tokens, localStorage items, and authentication headers."
+    typical_subagent: browser_navigator
+  browser_network_interception:
+    domain: browser_automation
+    description: "Intercepting HTTP network requests, mocking API responses, and inspecting HAR payloads."
+    typical_subagent: browser_navigator
+  browser_screenshot_capture:
+    domain: browser_automation
+    description: "Capturing viewport and full-page screenshots for visual audits or layout inspections."
+    typical_subagent: browser_navigator
+  browser_tab_management:
+    domain: browser_automation
+    description: "Opening, switching, closing browser tabs, handling popup windows and file downloads."
+    typical_subagent: browser_navigator
+  browser_accessibility_tree:
+    domain: browser_automation
+    description: "Navigating the accessibility object model (AOM), inspecting ARIA roles, states, and tab order."
+    typical_subagent: browser_navigator
+
+  # Multimodal & Vision
+  vision_ui_wireframe_analysis:
+    domain: multimodal_vision
+    description: "Analyzing UI wireframes and visual screenshots to generate responsive HTML, React, or Tailwind code."
+    typical_subagent: vision_analyst
+  vision_architecture_diagram:
+    domain: multimodal_vision
+    description: "Interpreting software architecture diagrams, database ER diagrams, and network topology charts."
+    typical_subagent: vision_analyst
+  vision_chart_data_decoding:
+    domain: multimodal_vision
+    description: "Extracting raw numerical data, axes scales, and categorical trends from chart and plot images."
+    typical_subagent: vision_analyst
+  vision_optical_inspection:
+    domain: multimodal_vision
+    description: "Inspecting physical photographs, PCB component placements, solder bridges, and mechanical defects."
+    typical_subagent: vision_analyst
+  vision_document_ocr_parsing:
+    domain: multimodal_vision
+    description: "Extracting typed and handwritten text from scanned PDFs, invoices, forms, and receipts."
+    typical_subagent: vision_analyst
+  vision_design_token_extraction:
+    domain: multimodal_vision
+    description: "Extracting color hex codes, font typography, spacing grids, and border radii from Figma exports."
+    typical_subagent: vision_analyst
+  vision_spatial_layout_reasoning:
+    domain: multimodal_vision
+    description: "Evaluating spatial relationships, bounding boxes, overlap anomalies, and UI alignment."
+    typical_subagent: vision_analyst
+  vision_video_temporal_reasoning:
+    domain: multimodal_vision
+    description: "Analyzing video sequences, tracking object trajectories across frames, and event timestamps."
+    typical_subagent: vision_analyst
+  vision_multimodal_safety_check:
+    domain: multimodal_vision
+    description: "Detecting prompt injection attacks embedded in image text (jailbreak typography) or visual steganography."
+    typical_subagent: safety_sentinel
+
+  # Model Context Protocol (MCP) Routing
+  mcp_github_server:
+    domain: mcp_protocol_routing
+    description: "Routing requests to GitHub MCP server for PR reviews, issue management, and git repository actions."
+    typical_subagent: mcp_orchestrator
+  mcp_postgres_server:
+    domain: mcp_protocol_routing
+    description: "Routing queries to PostgreSQL MCP server for live database schema inspection and query execution."
+    typical_subagent: mcp_orchestrator
+  mcp_slack_server:
+    domain: mcp_protocol_routing
+    description: "Routing communication requests to Slack MCP server for channel messaging and notifications."
+    typical_subagent: mcp_orchestrator
+  mcp_terminal_server:
+    domain: mcp_protocol_routing
+    description: "Routing shell command requests to persistent Terminal MCP server sessions."
+    typical_subagent: mcp_orchestrator
+  mcp_filesystem_server:
+    domain: mcp_protocol_routing
+    description: "Routing file operations to Filesystem MCP server for sandboxed file read/write/directory inspection."
+    typical_subagent: mcp_orchestrator
+  mcp_memory_knowledge_graph:
+    domain: mcp_protocol_routing
+    description: "Routing persistent entity queries and relation updates to Memory Graph MCP server."
+    typical_subagent: mcp_orchestrator
+  mcp_fetch_http_server:
+    domain: mcp_protocol_routing
+    description: "Routing external REST and URL fetch requests to Fetch MCP server."
+    typical_subagent: mcp_orchestrator
+  mcp_brave_search_server:
+    domain: mcp_protocol_routing
+    description: "Routing web search queries to Brave Search MCP server for fresh web knowledge retrieval."
+    typical_subagent: mcp_orchestrator
+  mcp_tool_negotiation_discovery:
+    domain: mcp_protocol_routing
+    description: "Querying MCP client discovery endpoints to list available server tools, schemas, and capabilities."
+    typical_subagent: mcp_orchestrator

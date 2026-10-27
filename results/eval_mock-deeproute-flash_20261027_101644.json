@@ -1,0 +1,460 @@
+{
+  "model_name": "oracle-perfect-baseline",
+  "timestamp": "2026-10-27 10:16:43",
+  "total_runtime_seconds": 0.59,
+  "atomic_results": {
+    "total_samples": 100,
+    "top1_accuracy": 1.0,
+    "top3_accuracy": 1.0,
+    "macro_f1": 1.0,
+    "micro_f1": 1.0,
+    "ece": 0.02,
+    "domain_accuracy": 1.0,
+    "confusion_pairs": [],
+    "latency": {
+      "p50_ms": 48.31,
+      "p90_ms": 67.83,
+      "p95_ms": 71.63,
+      "p99_ms": 74.56,
+      "mean_ms": 47.5,
+      "min_ms": 20.08,
+      "max_ms": 74.71,
+      "throughput_rps": 3022.17
+    },
+    "per_category_metrics": {
+      "admin_clarification_solicitation": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3.0
+      },
+      "admin_formatting_conversion": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2.0
+      },
+      "admin_general_chitchat": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2.0
+      },
+      "admin_help_capabilities": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1.0
+      },
+      "admin_meta_prompt_optimization": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1.0
+      },
+      "admin_scheduling_reminder": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2.0
+      },
+      "data_dataframe_transformation": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2.0
+      },
+      "data_etl_pipeline_design": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1.0
+      },
+      "data_schema_migration": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1.0
+      },
+      "data_sql_query_authoring": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3.0
+      },
+      "data_statistical_profiling": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1.0
+      },
+      "data_visualization_spec": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1.0
+      },
+      "finance_budgeting_forecasting": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1.0
+      },
+      "finance_crypto_tokenomics": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1.0
+      },
+      "finance_ledger_accounting": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2.0
+      },
+      "finance_memo_purchase_proposal": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2.0
+      },
+      "finance_rate_calculations": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2.0
+      },
+      "finance_tax_deduction_strategy": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2.0
+      },
+      "hardware_bom_optimization": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2.0
+      },
+      "hardware_firmware_development": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3.0
+      },
+      "hardware_pcb_layout_routing": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2.0
+      },
+      "hardware_protocol_reverse_eng": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1.0
+      },
+      "hardware_schematic_analysis": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2.0
+      },
+      "hardware_signal_integrity_power": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1.0
+      },
+      "math_algebra_calculus": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2.0
+      },
+      "math_combinatorics_discrete": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2.0
+      },
+      "math_formal_proof": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2.0
+      },
+      "math_logic_puzzles": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2.0
+      },
+      "math_numerical_computation": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1.0
+      },
+      "math_probability_statistics": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2.0
+      },
+      "prose_copywriting_marketing": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3.0
+      },
+      "prose_editing_proofreading": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2.0
+      },
+      "prose_email_correspondence": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2.0
+      },
+      "prose_longform_essay": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1.0
+      },
+      "prose_storytelling_narrative": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2.0
+      },
+      "prose_tone_transfer": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2.0
+      },
+      "research_citation_verification": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1.0
+      },
+      "research_competitive_intelligence": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2.0
+      },
+      "research_data_extraction": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1.0
+      },
+      "research_deep_survey": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1.0
+      },
+      "research_factual_search": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2.0
+      },
+      "research_literature_synthesis": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3.0
+      },
+      "swe_code_generation": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 5.0
+      },
+      "swe_code_refactoring": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1.0
+      },
+      "swe_debugging_bug_hunting": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2.0
+      },
+      "swe_devops_ci_cd": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2.0
+      },
+      "swe_system_architecture": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2.0
+      },
+      "swe_test_writing": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2.0
+      },
+      "sys_config_audit_hardening": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "sys_container_orchestration": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1.0
+      },
+      "sys_log_analysis_forensics": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1.0
+      },
+      "sys_network_troubleshooting": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1.0
+      },
+      "sys_pentest_vulnerability_scan": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2.0
+      },
+      "sys_shell_scripting": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3.0
+      }
+    }
+  },
+  "multilabel_results": {
+    "total_samples": 100,
+    "exact_match_ratio": 1.0,
+    "hamming_loss": 0.0,
+    "jaccard_index": 1.0,
+    "macro_f1": 1.0,
+    "micro_f1": 1.0,
+    "facet_accuracies": {
+      "domains": 1.0,
+      "intents": 1.0,
+      "modalities": 1.0,
+      "complexity": 1.0,
+      "safety_flags": 1.0,
+      "tool_dependencies": 1.0
+    },
+    "latency": {
+      "p50_ms": 49.05,
+      "p90_ms": 70.23,
+      "p95_ms": 73.88,
+      "p99_ms": 74.66,
+      "mean_ms": 48.32,
+      "min_ms": 20.19,
+      "max_ms": 74.89,
+      "throughput_rps": 3025.05
+    }
+  },
+  "compound_results": {
+    "total_samples": 100,
+    "is_compound_accuracy": 1.0,
+    "task_boundary_f1": 1.0,
+    "task_boundary_precision": 1.0,
+    "task_boundary_recall": 1.0,
+    "agent_allocation_accuracy": 1.0,
+    "intent_category_accuracy": 0.9183,
+    "dag_structural_validity": 1.0,
+    "dag_topological_match_pct": 1.0,
+    "dependency_edge_f1": 1.0,
+    "dependency_edge_jaccard": 1.0,
+    "mean_graph_edit_distance": 0.0,
+    "agent_confusion_matrix": {
+      "researcher": {
+        "researcher": 31
+      },
+      "coder": {
+        "coder": 67
+      },
+      "writer": {
+        "writer": 60
+      },
+      "finance_officer": {
+        "finance_officer": 18
+      },
+      "hardware_engineer": {
+        "hardware_engineer": 42
+      },
+      "sysadmin": {
+        "sysadmin": 34
+      },
+      "coordinator": {
+        "coordinator": 9
+      },
+      "math_specialist": {
+        "math_specialist": 6
+      },
+      "data_engineer": {
+        "data_engineer": 39
+      }
+    },
+    "latency": {
+      "p50_ms": 47.33,
+      "p90_ms": 68.35,
+      "p95_ms": 71.48,
+      "p99_ms": 72.24,
+      "mean_ms": 47.01,
+      "min_ms": 20.25,
+      "max_ms": 74.11,
+      "throughput_rps": 3096.13
+    },
+    "dag_pattern_breakdown": {
+      "linear_pipeline": {
+        "count": 25.0,
+        "boundary_f1": 1.0,
+        "agent_accuracy": 1.0,
+        "dag_validity": 1.0,
+        "topological_match": 1.0
+      },
+      "parallel_map_reduce": {
+        "count": 25.0,
+        "boundary_f1": 1.0,
+        "agent_accuracy": 1.0,
+        "dag_validity": 1.0,
+        "topological_match": 1.0
+      },
+      "diamond_dag": {
+        "count": 25.0,
+        "boundary_f1": 1.0,
+        "agent_accuracy": 1.0,
+        "dag_validity": 1.0,
+        "topological_match": 1.0
+      },
+      "atomic_fakeout": {
+        "count": 25.0,
+        "boundary_f1": 1.0,
+        "agent_accuracy": 1.0,
+        "dag_validity": 1.0,
+        "topological_match": 1.0
+      }
+    }
+  }
+}

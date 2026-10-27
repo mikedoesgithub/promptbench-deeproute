@@ -1,0 +1,90 @@
+{
+  "model_name": "mock-deeproute-flash",
+  "timestamp": "2026-10-27 10:17:45",
+  "total_runtime_seconds": 0.05,
+  "atomic_results": null,
+  "multilabel_results": null,
+  "compound_results": {
+    "total_samples": 100,
+    "is_compound_accuracy": 1.0,
+    "task_boundary_f1": 0.2145,
+    "task_boundary_precision": 0.2167,
+    "task_boundary_recall": 0.2124,
+    "agent_allocation_accuracy": 0.7692,
+    "intent_category_accuracy": 0.6154,
+    "dag_structural_validity": 1.0,
+    "dag_topological_match_pct": 0.36,
+    "dependency_edge_f1": 0.36,
+    "dependency_edge_jaccard": 0.36,
+    "mean_graph_edit_distance": 4.19,
+    "agent_confusion_matrix": {
+      "researcher": {
+        "researcher": 4,
+        "coder": 3
+      },
+      "coder": {
+        "coder": 15
+      },
+      "writer": {
+        "writer": 14
+      },
+      "sysadmin": {
+        "sysadmin": 7,
+        "coder": 3
+      },
+      "data_engineer": {
+        "data_engineer": 7,
+        "coder": 3
+      },
+      "finance_officer": {
+        "finance_officer": 3
+      },
+      "math_specialist": {
+        "coder": 3
+      },
+      "hardware_engineer": {
+        "coder": 3
+      }
+    },
+    "latency": {
+      "p50_ms": 45.84,
+      "p90_ms": 70.54,
+      "p95_ms": 72.67,
+      "p99_ms": 73.23,
+      "mean_ms": 48.05,
+      "min_ms": 20.38,
+      "max_ms": 73.37,
+      "throughput_rps": 2952.88
+    },
+    "dag_pattern_breakdown": {
+      "linear_pipeline": {
+        "count": 25.0,
+        "boundary_f1": 0.16,
+        "agent_accuracy": 0.16,
+        "dag_validity": 1.0,
+        "topological_match": 0.16
+      },
+      "parallel_map_reduce": {
+        "count": 25.0,
+        "boundary_f1": 0.28,
+        "agent_accuracy": 0.28,
+        "dag_validity": 1.0,
+        "topological_match": 0.28
+      },
+      "diamond_dag": {
+        "count": 25.0,
+        "boundary_f1": 0.0,
+        "agent_accuracy": 0.0,
+        "dag_validity": 1.0,
+        "topological_match": 0.0
+      },
+      "atomic_fakeout": {
+        "count": 25.0,
+        "boundary_f1": 1.0,
+        "agent_accuracy": 0.4,
+        "dag_validity": 1.0,
+        "topological_match": 1.0
+      }
+    }
+  }
+}

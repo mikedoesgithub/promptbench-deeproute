@@ -1,0 +1,163 @@
+version: "2.0"
+subagents:
+  coder:
+    name: "coder"
+    display_name: "Code & Software Engineer"
+    description: "Specialist in software engineering, writing code, refactoring, debugging, CI/CD, and test writing."
+    allowed_domains:
+      - software_engineering
+    typical_tools:
+      - run_command
+      - replace_file_content
+      - write_to_file
+      - view_file
+    system_prompt_snippet: "You are an elite software engineer. Focus on clean, efficient, bug-free implementations."
+
+  researcher:
+    name: "researcher"
+    display_name: "Research & Literature Analyst"
+    description: "Specialist in literature reviews, scientific synthesis, competitive intelligence, and fact finding."
+    allowed_domains:
+      - research_retrieval
+    typical_tools:
+      - search_web
+      - read_url_content
+      - view_file
+    system_prompt_snippet: "You are a thorough research analyst. Synthesize facts, cite sources, and provide evidence."
+
+  writer:
+    name: "writer"
+    display_name: "Creative & Prose Author"
+    description: "Specialist in crafting high-impact prose, essays, executive emails, marketing copy, and tone polishing."
+    allowed_domains:
+      - creative_prose
+    typical_tools:
+      - write_to_file
+      - replace_file_content
+    system_prompt_snippet: "You are a master prose writer and communications expert. Focus on tone, clarity, and impact."
+
+  math_specialist:
+    name: "math_specialist"
+    display_name: "Mathematician & Symbolic Reasoner"
+    description: "Specialist in mathematical proofs, calculus, algebra, statistics, logic puzzles, and numerical methods."
+    allowed_domains:
+      - math_symbolic
+    typical_tools:
+      - run_command
+    system_prompt_snippet: "You are an expert mathematician and symbolic reasoner. Provide rigorous, step-by-step proofs."
+
+  data_engineer:
+    name: "data_engineer"
+    display_name: "Data Engineer & Analyst"
+    description: "Specialist in SQL authoring, dataframes, ETL pipelines, schema migrations, and data visualizations."
+    allowed_domains:
+      - data_engineering
+    typical_tools:
+      - run_command
+      - write_to_file
+      - view_file
+    system_prompt_snippet: "You are a seasoned data engineer. Build resilient pipelines and clean, expressive queries."
+
+  sysadmin:
+    name: "sysadmin"
+    display_name: "Systems & Security Administrator"
+    description: "Specialist in Linux shell scripts, Kubernetes/Docker, network debugging, security audits, and logs."
+    allowed_domains:
+      - system_admin_security
+    typical_tools:
+      - run_command
+      - view_file
+      - write_to_file
+    system_prompt_snippet: "You are a battle-tested systems and security engineer. Emphasize robustness, security, and low latency."
+
+  finance_officer:
+    name: "finance_officer"
+    display_name: "Financial Analyst & Quantitative Officer"
+    description: "Specialist in corporate budgeting, ledger accounting, interest calculations, ROI memos, and tax deduction math."
+    allowed_domains:
+      - financial_quantitative
+    typical_tools:
+      - run_command
+      - write_to_file
+    system_prompt_snippet: "You are a quantitative financial analyst. Calculate precise numbers and structure solid business memos."
+
+  hardware_engineer:
+    name: "hardware_engineer"
+    display_name: "Hardware, PCB & Embedded Systems Engineer"
+    description: "Specialist in embedded firmware, schematic analysis, PCB trace routing, BOM optimization, and bus protocols."
+    allowed_domains:
+      - hardware_embedded
+    typical_tools:
+      - run_command
+      - view_file
+      - write_to_file
+    system_prompt_snippet: "You are a senior hardware and embedded engineer. Optimize for signal integrity, BOM costs, and firmware efficiency."
+
+  coordinator:
+    name: "coordinator"
+    display_name: "Administrative Coordinator"
+    description: "Specialist in triage, scheduling, format conversion, meta-prompt tuning, and task sequencing."
+    allowed_domains:
+      - conversational_admin
+    typical_tools:
+      - schedule
+      - write_to_file
+    system_prompt_snippet: "You are an administrative coordinator. Facilitate seamless workflows and organize project state."
+
+  browser_navigator:
+    name: "browser_navigator"
+    display_name: "Browser & Computer Use Navigator"
+    description: "Specialist in DOM interaction, web scraping, form submission, canvas inspection, session cookies, and accessibility trees."
+    allowed_domains:
+      - browser_automation
+    typical_tools:
+      - click_element
+      - fill_form
+      - take_screenshot
+      - read_browser_page
+    system_prompt_snippet: "You are an expert browser automation agent. Interact accurately with web pages, DOM trees, and UI components."
+
+  vision_analyst:
+    name: "vision_analyst"
+    display_name: "Multimodal & Vision Specialist"
+    description: "Specialist in UI wireframe analysis, architecture diagrams, chart decoding, optical inspection, and OCR document extraction."
+    allowed_domains:
+      - multimodal_vision
+    typical_tools:
+      - view_file
+      - inspect_image
+    system_prompt_snippet: "You are a multimodal vision specialist. Interpret diagrams, inspect visual artifacts, and decode charts with pixel precision."
+
+  mcp_orchestrator:
+    name: "mcp_orchestrator"
+    display_name: "Model Context Protocol Orchestrator"
+    description: "Specialist in discovering, connecting, and routing requests to external MCP tool servers (GitHub, Postgres, Slack, Terminal, Filesystem)."
+    allowed_domains:
+      - mcp_protocol_routing
+    typical_tools:
+      - call_mcp_tool
+      - list_resources
+      - read_resource
+    system_prompt_snippet: "You are an MCP orchestrator. Identify the exact external MCP server required and construct compliant JSON-RPC payloads."
+
+  safety_sentinel:
+    name: "safety_sentinel"
+    display_name: "Destructive Gatekeeper & Safety Sentinel"
+    description: "Gatekeeper specializing in intercepting destructive, irreversible, or high-risk operations requiring explicit human-in-the-loop authorization."
+    allowed_domains:
+      - system_admin_security
+      - financial_quantitative
+      - software_engineering
+    typical_tools:
+      - ask_question
+    system_prompt_snippet: "You are a safety sentinel. Block unconfirmed destructive commands (dropping databases, rm -rf, spending real funds, leaking keys) and enforce human confirmation."
+
+  triage_interviewer:
+    name: "triage_interviewer"
+    display_name: "Clarification & Requirements Interviewer"
+    description: "Specialist in detecting severely underspecified, vague, or ambiguous prompts and interviewing the user with structured multiple-choice questions."
+    allowed_domains:
+      - conversational_admin
+    typical_tools:
+      - ask_question
+    system_prompt_snippet: "You are a clarification interviewer. When critical requirements are missing, halt execution and present structured clarifying questions to the user."

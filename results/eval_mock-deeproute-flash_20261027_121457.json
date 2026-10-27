@@ -1,0 +1,1007 @@
+{
+  "model_name": "mock-deeproute-flash",
+  "timestamp": "2026-10-27 12:14:56",
+  "total_runtime_seconds": 1.08,
+  "overall_laps_score": 27.44,
+  "atomic_results": {
+    "total_samples": 400,
+    "top1_accuracy": 0.2975,
+    "top3_accuracy": 0.3075,
+    "macro_f1": 0.3259,
+    "micro_f1": 0.2975,
+    "ece": 0.6083,
+    "domain_accuracy": 0.4125,
+    "laps_score": 25.68,
+    "confusion_pairs": [
+      {
+        "ground_truth": "browser_canvas_inspection",
+        "predicted": "admin_general_chitchat",
+        "count": 3
+      },
+      {
+        "ground_truth": "browser_screenshot_capture",
+        "predicted": "vision_ui_wireframe_analysis",
+        "count": 3
+      },
+      {
+        "ground_truth": "data_vector_index_tuning",
+        "predicted": "admin_general_chitchat",
+        "count": 3
+      },
+      {
+        "ground_truth": "finance_crypto_tokenomics",
+        "predicted": "admin_general_chitchat",
+        "count": 3
+      },
+      {
+        "ground_truth": "finance_ledger_accounting",
+        "predicted": "admin_general_chitchat",
+        "count": 3
+      },
+      {
+        "ground_truth": "finance_rate_calculations",
+        "predicted": "admin_general_chitchat",
+        "count": 3
+      },
+      {
+        "ground_truth": "math_combinatorics_discrete",
+        "predicted": "admin_general_chitchat",
+        "count": 3
+      },
+      {
+        "ground_truth": "admin_clarification_solicitation",
+        "predicted": "admin_general_chitchat",
+        "count": 2
+      },
+      {
+        "ground_truth": "admin_file_management",
+        "predicted": "admin_general_chitchat",
+        "count": 2
+      },
+      {
+        "ground_truth": "admin_session_state_context",
+        "predicted": "browser_accessibility_tree",
+        "count": 2
+      },
+      {
+        "ground_truth": "browser_network_interception",
+        "predicted": "browser_dom_interaction",
+        "count": 2
+      },
+      {
+        "ground_truth": "browser_session_cookies",
+        "predicted": "admin_general_chitchat",
+        "count": 2
+      },
+      {
+        "ground_truth": "browser_tab_management",
+        "predicted": "admin_general_chitchat",
+        "count": 2
+      },
+      {
+        "ground_truth": "data_lakehouse_storage",
+        "predicted": "browser_tab_management",
+        "count": 2
+      },
+      {
+        "ground_truth": "data_quality_validation",
+        "predicted": "admin_general_chitchat",
+        "count": 2
+      },
+      {
+        "ground_truth": "data_schema_migration",
+        "predicted": "browser_tab_management",
+        "count": 2
+      },
+      {
+        "ground_truth": "data_statistical_profiling",
+        "predicted": "admin_general_chitchat",
+        "count": 2
+      },
+      {
+        "ground_truth": "data_visualization_spec",
+        "predicted": "admin_general_chitchat",
+        "count": 2
+      },
+      {
+        "ground_truth": "data_visualization_spec",
+        "predicted": "browser_dom_interaction",
+        "count": 2
+      },
+      {
+        "ground_truth": "finance_budgeting_forecasting",
+        "predicted": "admin_general_chitchat",
+        "count": 2
+      }
+    ],
+    "latency": {
+      "p50_ms": 46.25,
+      "p90_ms": 69.16,
+      "p95_ms": 72.0,
+      "p99_ms": 74.52,
+      "mean_ms": 47.22,
+      "std_ms": 16.08,
+      "min_ms": 20.26,
+      "max_ms": 75.0,
+      "throughput_rps": 3238.4,
+      "concurrency": 10
+    },
+    "per_category_metrics": {
+      "admin_clarification_solicitation": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6667,
+        "support": 4.0
+      },
+      "admin_file_management": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 4.0
+      },
+      "admin_formatting_conversion": {
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5,
+        "support": 4.0
+      },
+      "admin_general_chitchat": {
+        "precision": 0.0275,
+        "recall": 0.75,
+        "f1": 0.0531,
+        "support": 4.0
+      },
+      "admin_help_capabilities": {
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4,
+        "support": 4.0
+      },
+      "admin_meta_prompt_optimization": {
+        "precision": 0.75,
+        "recall": 0.75,
+        "f1": 0.75,
+        "support": 4.0
+      },
+      "admin_scheduling_reminder": {
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1": 0.8571,
+        "support": 4.0
+      },
+      "admin_session_state_context": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 4.0
+      },
+      "admin_workflow_orchestration": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 4.0
+      },
+      "browser_accessibility_tree": {
+        "precision": 0.1667,
+        "recall": 0.25,
+        "f1": 0.2,
+        "support": 4.0
+      },
+      "browser_canvas_inspection": {
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4,
+        "support": 4.0
+      },
+      "browser_dom_interaction": {
+        "precision": 0.0714,
+        "recall": 0.5,
+        "f1": 0.125,
+        "support": 4.0
+      },
+      "browser_form_submission": {
+        "precision": 0.1429,
+        "recall": 0.25,
+        "f1": 0.1818,
+        "support": 4.0
+      },
+      "browser_network_interception": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 4.0
+      },
+      "browser_screenshot_capture": {
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4,
+        "support": 4.0
+      },
+      "browser_session_cookies": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 4.0
+      },
+      "browser_tab_management": {
+        "precision": 0.0625,
+        "recall": 0.5,
+        "f1": 0.1111,
+        "support": 4.0
+      },
+      "browser_web_scraping": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6667,
+        "support": 4.0
+      },
+      "data_dataframe_transformation": {
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1": 0.8571,
+        "support": 4.0
+      },
+      "data_etl_pipeline_design": {
+        "precision": 0.6667,
+        "recall": 0.5,
+        "f1": 0.5714,
+        "support": 4.0
+      },
+      "data_lakehouse_storage": {
+        "precision": 0.5,
+        "recall": 0.25,
+        "f1": 0.3333,
+        "support": 4.0
+      },
+      "data_quality_validation": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 4.0
+      },
+      "data_schema_migration": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 4.0
+      },
+      "data_sql_query_authoring": {
+        "precision": 0.4,
+        "recall": 0.5,
+        "f1": 0.4444,
+        "support": 4.0
+      },
+      "data_statistical_profiling": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 4.0
+      },
+      "data_vector_index_tuning": {
+        "precision": 0.25,
+        "recall": 0.25,
+        "f1": 0.25,
+        "support": 4.0
+      },
+      "data_visualization_spec": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 4.0
+      },
+      "finance_budgeting_forecasting": {
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4,
+        "support": 4.0
+      },
+      "finance_crypto_tokenomics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 4.0
+      },
+      "finance_equity_cap_table": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 4.0
+      },
+      "finance_ledger_accounting": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 4.0
+      },
+      "finance_memo_purchase_proposal": {
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4,
+        "support": 4.0
+      },
+      "finance_portfolio_risk_modeling": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 4.0
+      },
+      "finance_rate_calculations": {
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4,
+        "support": 4.0
+      },
+      "finance_tax_deduction_strategy": {
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1": 0.8571,
+        "support": 4.0
+      },
+      "finance_unit_economics": {
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5,
+        "support": 4.0
+      },
+      "hardware_bom_optimization": {
+        "precision": 0.3333,
+        "recall": 0.25,
+        "f1": 0.2857,
+        "support": 4.0
+      },
+      "hardware_firmware_development": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 4.0
+      },
+      "hardware_mfg_dfm_validation": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 4.0
+      },
+      "hardware_pcb_layout_routing": {
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5,
+        "support": 4.0
+      },
+      "hardware_protocol_reverse_eng": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 4.0
+      },
+      "hardware_rf_wireless_design": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 4.0
+      },
+      "hardware_schematic_analysis": {
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4,
+        "support": 4.0
+      },
+      "hardware_signal_integrity_power": {
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4,
+        "support": 4.0
+      },
+      "hardware_thermal_management": {
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4,
+        "support": 4.0
+      },
+      "math_algebra_calculus": {
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4,
+        "support": 4.0
+      },
+      "math_combinatorics_discrete": {
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4,
+        "support": 4.0
+      },
+      "math_formal_proof": {
+        "precision": 0.4286,
+        "recall": 0.75,
+        "f1": 0.5455,
+        "support": 4.0
+      },
+      "math_information_theory": {
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4,
+        "support": 4.0
+      },
+      "math_linear_algebra": {
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4,
+        "support": 4.0
+      },
+      "math_logic_puzzles": {
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4,
+        "support": 4.0
+      },
+      "math_numerical_computation": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 4.0
+      },
+      "math_optimization_theory": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 4.0
+      },
+      "math_probability_statistics": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6667,
+        "support": 4.0
+      },
+      "mcp_github_server": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "prose_copywriting_marketing": {
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4,
+        "support": 4.0
+      },
+      "prose_creative_ideation": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 4.0
+      },
+      "prose_editing_proofreading": {
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4,
+        "support": 4.0
+      },
+      "prose_email_correspondence": {
+        "precision": 0.75,
+        "recall": 0.75,
+        "f1": 0.75,
+        "support": 4.0
+      },
+      "prose_longform_essay": {
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1": 0.8571,
+        "support": 4.0
+      },
+      "prose_storytelling_narrative": {
+        "precision": 0.3333,
+        "recall": 0.25,
+        "f1": 0.2857,
+        "support": 4.0
+      },
+      "prose_summarization_executive": {
+        "precision": 0.3333,
+        "recall": 0.25,
+        "f1": 0.2857,
+        "support": 4.0
+      },
+      "prose_technical_writing": {
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4,
+        "support": 4.0
+      },
+      "prose_tone_transfer": {
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4,
+        "support": 4.0
+      },
+      "research_citation_verification": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 4.0
+      },
+      "research_competitive_intelligence": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 4.0
+      },
+      "research_data_extraction": {
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4,
+        "support": 4.0
+      },
+      "research_deep_survey": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6667,
+        "support": 4.0
+      },
+      "research_factual_search": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 4.0
+      },
+      "research_literature_synthesis": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 4.0
+      },
+      "research_patent_analysis": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6667,
+        "support": 4.0
+      },
+      "research_regulatory_compliance": {
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4,
+        "support": 4.0
+      },
+      "research_source_credibility": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 4.0
+      },
+      "swe_api_integration": {
+        "precision": 0.4,
+        "recall": 0.5,
+        "f1": 0.4444,
+        "support": 4.0
+      },
+      "swe_code_generation": {
+        "precision": 0.1875,
+        "recall": 0.75,
+        "f1": 0.3,
+        "support": 4.0
+      },
+      "swe_code_refactoring": {
+        "precision": 0.25,
+        "recall": 0.25,
+        "f1": 0.25,
+        "support": 4.0
+      },
+      "swe_debugging_bug_hunting": {
+        "precision": 0.5,
+        "recall": 0.25,
+        "f1": 0.3333,
+        "support": 4.0
+      },
+      "swe_dependency_management": {
+        "precision": 0.3333,
+        "recall": 0.25,
+        "f1": 0.2857,
+        "support": 4.0
+      },
+      "swe_devops_ci_cd": {
+        "precision": 0.3333,
+        "recall": 0.25,
+        "f1": 0.2857,
+        "support": 4.0
+      },
+      "swe_performance_profiling": {
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4,
+        "support": 4.0
+      },
+      "swe_system_architecture": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 4.0
+      },
+      "swe_test_writing": {
+        "precision": 0.5714,
+        "recall": 1.0,
+        "f1": 0.7273,
+        "support": 4.0
+      },
+      "sys_backup_disaster_recovery": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 4.0
+      },
+      "sys_config_audit_hardening": {
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4,
+        "support": 4.0
+      },
+      "sys_container_orchestration": {
+        "precision": 0.6667,
+        "recall": 0.5,
+        "f1": 0.5714,
+        "support": 4.0
+      },
+      "sys_identity_access_management": {
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4,
+        "support": 4.0
+      },
+      "sys_infrastructure_as_code": {
+        "precision": 0.0714,
+        "recall": 0.25,
+        "f1": 0.1111,
+        "support": 4.0
+      },
+      "sys_log_analysis_forensics": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6667,
+        "support": 4.0
+      },
+      "sys_network_troubleshooting": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 4.0
+      },
+      "sys_pentest_vulnerability_scan": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 4.0
+      },
+      "sys_shell_scripting": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4.0
+      },
+      "vision_architecture_diagram": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6667,
+        "support": 4.0
+      },
+      "vision_chart_data_decoding": {
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4,
+        "support": 4.0
+      },
+      "vision_design_token_extraction": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6667,
+        "support": 4.0
+      },
+      "vision_document_ocr_parsing": {
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1": 0.8571,
+        "support": 4.0
+      },
+      "vision_multimodal_safety_check": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 4.0
+      },
+      "vision_optical_inspection": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6667,
+        "support": 4.0
+      },
+      "vision_spatial_layout_reasoning": {
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1": 0.8571,
+        "support": 4.0
+      },
+      "vision_ui_wireframe_analysis": {
+        "precision": 0.1176,
+        "recall": 0.5,
+        "f1": 0.1905,
+        "support": 4.0
+      },
+      "vision_video_temporal_reasoning": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 4.0
+      }
+    },
+    "domain_breakdown": {
+      "software_engineering": {
+        "total_samples": 36.0,
+        "domain_accuracy": 0.5,
+        "category_accuracy": 0.3889
+      },
+      "research_retrieval": {
+        "total_samples": 36.0,
+        "domain_accuracy": 0.2778,
+        "category_accuracy": 0.1667
+      },
+      "creative_prose": {
+        "total_samples": 36.0,
+        "domain_accuracy": 0.4167,
+        "category_accuracy": 0.3333
+      },
+      "math_symbolic": {
+        "total_samples": 36.0,
+        "domain_accuracy": 0.3611,
+        "category_accuracy": 0.2778
+      },
+      "data_engineering": {
+        "total_samples": 36.0,
+        "domain_accuracy": 0.3333,
+        "category_accuracy": 0.25
+      },
+      "system_admin_security": {
+        "total_samples": 36.0,
+        "domain_accuracy": 0.3333,
+        "category_accuracy": 0.3056
+      },
+      "financial_quantitative": {
+        "total_samples": 36.0,
+        "domain_accuracy": 0.2222,
+        "category_accuracy": 0.2222
+      },
+      "hardware_embedded": {
+        "total_samples": 36.0,
+        "domain_accuracy": 0.4167,
+        "category_accuracy": 0.1667
+      },
+      "conversational_admin": {
+        "total_samples": 36.0,
+        "domain_accuracy": 0.5556,
+        "category_accuracy": 0.3889
+      },
+      "browser_automation": {
+        "total_samples": 36.0,
+        "domain_accuracy": 0.4444,
+        "category_accuracy": 0.2778
+      },
+      "multimodal_vision": {
+        "total_samples": 36.0,
+        "domain_accuracy": 0.6111,
+        "category_accuracy": 0.4167
+      },
+      "mcp_protocol_routing": {
+        "total_samples": 4.0,
+        "domain_accuracy": 1.0,
+        "category_accuracy": 1.0
+      }
+    },
+    "concurrency_sweep": []
+  },
+  "multilabel_results": {
+    "total_samples": 300,
+    "exact_match_ratio": 0.0,
+    "hamming_loss": 0.1492,
+    "jaccard_index": 0.4362,
+    "macro_f1": 0.2687,
+    "micro_f1": 0.6024,
+    "laps_score": 37.54,
+    "facet_accuracies": {
+      "domains": 0.3122,
+      "intents": 0.1978,
+      "modalities": 0.5833,
+      "complexity": 0.8733,
+      "safety_flags": 1.0,
+      "tool_dependencies": 0.6367
+    },
+    "latency": {
+      "p50_ms": 45.02,
+      "p90_ms": 69.95,
+      "p95_ms": 72.61,
+      "p99_ms": 74.11,
+      "mean_ms": 46.83,
+      "std_ms": 16.11,
+      "min_ms": 20.42,
+      "max_ms": 74.69,
+      "throughput_rps": 1654.85,
+      "concurrency": 10
+    },
+    "concurrency_sweep": []
+  },
+  "compound_results": {
+    "total_samples": 300,
+    "is_compound_accuracy": 0.66,
+    "task_boundary_f1": 0.1256,
+    "task_boundary_precision": 0.1684,
+    "task_boundary_recall": 0.1002,
+    "agent_allocation_accuracy": 0.1,
+    "intent_category_accuracy": 0.0,
+    "dag_structural_validity": 1.0,
+    "dag_topological_match_pct": 0.3333,
+    "dependency_edge_f1": 0.3333,
+    "dependency_edge_jaccard": 0.3333,
+    "mean_graph_edit_distance": 4.3933,
+    "laps_score": 16.19,
+    "agent_confusion_matrix": {
+      "coder": {
+        "coder": 10
+      },
+      "finance_officer": {
+        "coder": 10
+      },
+      "writer": {
+        "coder": 10
+      },
+      "math_specialist": {
+        "coder": 10
+      },
+      "sysadmin": {
+        "coder": 10
+      },
+      "data_engineer": {
+        "coder": 10
+      },
+      "researcher": {
+        "coder": 10
+      },
+      "hardware_engineer": {
+        "coder": 10
+      },
+      "browser_navigator": {
+        "coder": 10
+      },
+      "vision_analyst": {
+        "coder": 10
+      }
+    },
+    "latency": {
+      "p50_ms": 46.92,
+      "p90_ms": 67.57,
+      "p95_ms": 70.74,
+      "p99_ms": 74.32,
+      "mean_ms": 46.25,
+      "std_ms": 15.22,
+      "min_ms": 20.22,
+      "max_ms": 74.85,
+      "throughput_rps": 3204.21,
+      "concurrency": 10
+    },
+    "dag_pattern_breakdown": {
+      "diamond_dag": {
+        "count": 65.0,
+        "boundary_f1": 0.0,
+        "agent_accuracy": 0.0,
+        "dag_validity": 1.0,
+        "topological_match": 0.0
+      },
+      "parallel_map_reduce": {
+        "count": 65.0,
+        "boundary_f1": 0.0,
+        "agent_accuracy": 0.0,
+        "dag_validity": 1.0,
+        "topological_match": 0.0
+      },
+      "dynamic_cyclic": {
+        "count": 70.0,
+        "boundary_f1": 0.0,
+        "agent_accuracy": 0.0,
+        "dag_validity": 1.0,
+        "topological_match": 0.0
+      },
+      "atomic_fakeout": {
+        "count": 100.0,
+        "boundary_f1": 1.0,
+        "agent_accuracy": 0.1,
+        "dag_validity": 1.0,
+        "topological_match": 1.0
+      }
+    },
+    "concurrency_sweep": []
+  },
+  "adversarial_results": {
+    "total_samples": 200,
+    "overall_accuracy": 0.35,
+    "injection_detection_rate": 0.8571,
+    "multilingual_accuracy": 0.1429,
+    "distractor_robustness_rate": 0.0,
+    "safety_flag_accuracy": 0.9,
+    "laps_score": 30.35,
+    "latency": {
+      "p50_ms": 47.88,
+      "p90_ms": 68.81,
+      "p95_ms": 71.15,
+      "p99_ms": 72.98,
+      "mean_ms": 47.04,
+      "std_ms": 16.08,
+      "min_ms": 20.21,
+      "max_ms": 73.49,
+      "throughput_rps": 3304.77,
+      "concurrency": 10
+    },
+    "confusion_pairs": [
+      {
+        "ground_truth": "data_sql_query_authoring",
+        "predicted": "swe_code_generation",
+        "count": 20
+      },
+      {
+        "ground_truth": "finance_rate_calculations",
+        "predicted": "swe_code_generation",
+        "count": 20
+      },
+      {
+        "ground_truth": "sys_config_audit_hardening",
+        "predicted": "swe_code_generation",
+        "count": 10
+      },
+      {
+        "ground_truth": "sys_shell_scripting",
+        "predicted": "swe_code_generation",
+        "count": 10
+      },
+      {
+        "ground_truth": "prose_tone_transfer",
+        "predicted": "sys_config_audit_hardening",
+        "count": 10
+      },
+      {
+        "ground_truth": "hardware_bom_optimization",
+        "predicted": "swe_code_generation",
+        "count": 10
+      },
+      {
+        "ground_truth": "browser_dom_interaction",
+        "predicted": "swe_code_generation",
+        "count": 10
+      },
+      {
+        "ground_truth": "prose_email_correspondence",
+        "predicted": "swe_code_generation",
+        "count": 10
+      },
+      {
+        "ground_truth": "research_literature_synthesis",
+        "predicted": "swe_code_generation",
+        "count": 10
+      },
+      {
+        "ground_truth": "prose_editing_proofreading",
+        "predicted": "swe_code_generation",
+        "count": 10
+      },
+      {
+        "ground_truth": "math_algebra_calculus",
+        "predicted": "swe_code_generation",
+        "count": 10
+      }
+    ],
+    "stress_breakdown": {
+      "prompt_injection": {
+        "total": 70.0,
+        "accuracy": 0.8571
+      },
+      "multilingual_codeswitch": {
+        "total": 70.0,
+        "accuracy": 0.1429
+      },
+      "misleading_distractor": {
+        "total": 60.0,
+        "accuracy": 0.0
+      }
+    }
+  }
+}
